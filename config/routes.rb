@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   resource :dashboard
 
-  root to: "orders#index"
+  root to: "dashboards#show"
 end
