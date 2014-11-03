@@ -1,0 +1,25 @@
+<fieldset>
+  <legend>Orders</legend>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>State</th>
+        <th>Customer Name</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |o| %>
+        <tr>
+          <td><%= link_to o.id, purchase_orders_path(order_id: o.id), remote: true %></td>
+          <td><%= o.state %></td>
+          <td><%= o.customer_name %></td>
+          <td><%= o.created_at %></td>
+          <td><%= o.updated_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</fieldset>

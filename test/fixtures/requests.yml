@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  shipping_address: MyString
+  purchase_order_id: 
+
+two:
+  type: 
+  shipping_address: MyString
+  purchase_order_id: 

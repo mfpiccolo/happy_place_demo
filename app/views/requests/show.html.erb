@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @request.type %>
+</p>
+
+<p>
+  <strong>Shipping address:</strong>
+  <%= @request.shipping_address %>
+</p>
+
+<p>
+  <strong>Purchase order:</strong>
+  <%= @request.purchase_order %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

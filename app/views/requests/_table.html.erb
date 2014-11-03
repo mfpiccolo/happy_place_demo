@@ -1,0 +1,28 @@
+<fieldset>
+  <legend>Requests</legend>
+  <%= link_to "All", requests_path(all: true), remote: true %>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Purchase Order ID</th>
+        <th>Type</th>
+        <th>Shipping Address</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @requests.each do |r| %>
+        <tr>
+          <td><%= link_to r.id, line_items_path(request_id: r.id), remote: true %></td>
+          <td><%= r.purchase_order_id %></td>
+          <td><%= r.type %></td>
+          <td><%= r.shipping_address %></td>
+          <td><%= r.created_at %></td>
+          <td><%= r.updated_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</fieldset>

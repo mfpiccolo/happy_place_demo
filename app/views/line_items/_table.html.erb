@@ -1,0 +1,28 @@
+<fieldset>
+  <legend>Line Items</legend>
+  <%= link_to "All", line_items_path(all: true), remote: true %>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Request ID</th>
+        <th>SKU</th>
+        <th>Price Cents</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @line_items.each do |li| %>
+        <tr>
+          <td><%= li.id %></td>
+          <td><%= li.request_id %></td>
+          <td><%= li.sku %></td>
+          <td><%= li.price_cents %></td>
+          <td><%= li.created_at %></td>
+          <td><%= li.updated_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</fieldset>

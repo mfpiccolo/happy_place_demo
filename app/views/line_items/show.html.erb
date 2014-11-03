@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sku:</strong>
+  <%= @line_item.sku %>
+</p>
+
+<p>
+  <strong>Price cents:</strong>
+  <%= @line_item.price_cents %>
+</p>
+
+<p>
+  <strong>Requests:</strong>
+  <%= @line_item.requests %>
+</p>
+
+<%= link_to 'Edit', edit_line_item_path(@line_item) %> |
+<%= link_to 'Back', line_items_path %>

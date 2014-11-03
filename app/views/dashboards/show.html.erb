@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="large-12 columns">
+    <h2>Happy Place Demo</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-6 columns">
+
+    <div class="row">
+      <div class="large-12 columns">
+        <div id="orders">
+          <%= render partial: "orders/table"%>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <div id="purchase_orders">
+          <%= render partial: "purchase_orders/table"%>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <div id="requests">
+          <%= render partial: "requests/table"%>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <div id="line_items">
+          <%= render partial: "line_items/table"%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="large-6 columns">
+    <fieldset>
+      <legend>Code</legend>
+      <div class="row">
+        <div class="large-12 columns">
+          <pre id="code" class="prettyprint lang-ruby">
+          </pre>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
