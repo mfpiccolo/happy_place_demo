@@ -30,6 +30,8 @@ gem "happy_place", "0.0.4"
 gem 'foundation-rails'
 gem 'kaminari'
 
+gem 'rails_12factor', group: :production
+
 group :development do
   gem "pry-byebug"
 end
