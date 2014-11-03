@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141103054052) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "line_items", force: true do |t|
     t.string   "sku"
     t.integer  "price_cents"
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 20141103054052) do
     t.datetime "updated_at"
   end
 
-  add_index "purchase_orders", ["order_id"], name: "index_purchase_orders_on_order_id"
+  add_index "purchase_orders", ["order_id"], name: "index_purchase_orders_on_order_id", using: :btree
 
   create_table "requests", force: true do |t|
     t.string   "type"
@@ -46,6 +49,6 @@ ActiveRecord::Schema.define(version: 20141103054052) do
     t.datetime "updated_at"
   end
 
-  add_index "requests", ["purchase_order_id"], name: "index_requests_on_purchase_order_id"
+  add_index "requests", ["purchase_order_id"], name: "index_requests_on_purchase_order_id", using: :btree
 
 end

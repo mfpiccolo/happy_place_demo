@@ -48,7 +48,7 @@ GEM
     foundation-rails (5.4.5.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
-    happy_place (0.0.4)
+    happy_place (0.0.5)
       rails (>= 3.0)
     hike (1.2.3)
     i18n (0.6.11)
@@ -139,7 +139,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   foundation-rails
-  happy_place (= 0.0.4)
+  happy_place (= 0.0.5)
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
