@@ -11,14 +11,13 @@
 
   <tbody id="purchase_orders">
     <!-- Sets up a js array of objects and binds the attrs -->
-    <% purchase_orders_template = capture do %>
+    <%= bind_collection(@purchase_orders) do %>
       <tr>
         <td data-attr="state"></td>
         <td data-attr="important_info"></td>
         <td data-attr="order_id"></td>
       </tr>
     <% end %>
-    <%= bind_collection(@purchase_orders, purchase_orders_template) %>
   </tbody>
 </table>
 

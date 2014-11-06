@@ -1,6 +1,7 @@
 class PurchaseOrdersController < ApplicationController
   before_action :set_purchase_order, only: [:show, :edit, :update, :destroy]
 
+  helper_method :js
   # GET /purchase_orders
   # GET /purchase_orders.json
   def index
@@ -106,16 +107,4 @@ class PurchaseOrdersController < ApplicationController
       "You have just scoped all associated objects to Order ##{params[:order_id]}"
     end
 
-    def bind_collection(collection, template)
-      js(
-        js_class: "Binder",
-        function: "index",
-        args: {
-          template: template,
-          purchase_orders: collection.to_json
-        },
-        rendered: true
-      )
-    end
-    helper_method :bind_collection
 end
