@@ -6,21 +6,19 @@
       <th>State</th>
       <th>Important info</th>
       <th>Order</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
-  <tbody>
-    <% @purchase_orders.each do |purchase_order| %>
+  <tbody id="purchase_orders">
+    <!-- Sets up a js array of objects and binds the attrs -->
+    <% purchase_orders_template = capture do %>
       <tr>
-        <td><%= purchase_order.state %></td>
-        <td><%= purchase_order.important_info %></td>
-        <td><%= purchase_order.order %></td>
-        <td><%= link_to 'Show', purchase_order %></td>
-        <td><%= link_to 'Edit', edit_purchase_order_path(purchase_order) %></td>
-        <td><%= link_to 'Destroy', purchase_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td data-attr="state"></td>
+        <td data-attr="important_info"></td>
+        <td data-attr="order_id"></td>
       </tr>
     <% end %>
+    <%= bind_collection(@purchase_orders, purchase_orders_template) %>
   </tbody>
 </table>
 

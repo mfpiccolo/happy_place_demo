@@ -18,13 +18,13 @@ class PurchaseOrdersFilter
     set_controller_instance_vars
   end
 
-  def self.call(params, foramt, controller)
-    new(params, foramt, controller).call
+  def self.call(params, controller)
+    new(params, controller).call
   end
 
-  def initialize(params, foramt, controller)
+  def initialize(params, controller)
     @params = params
-    @format = format
+    @format = controller.request.format
     @controller = controller
   end
 

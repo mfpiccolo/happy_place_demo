@@ -4,7 +4,7 @@ class PurchaseOrdersController < ApplicationController
   # GET /purchase_orders
   # GET /purchase_orders.json
   def index
-    PurchaseOrdersFilter.(params, request.format, self)
+    PurchaseOrdersFilter.(params, self)
 
     respond_to do |format|
       format.js {
@@ -105,4 +105,17 @@ class PurchaseOrdersController < ApplicationController
     def description
       "You have just scoped all associated objects to Order ##{params[:order_id]}"
     end
+
+    def bind_collection(collection, template)
+      js(
+        js_class: "Binder",
+        function: "index",
+        args: {
+          template: template,
+          purchase_orders: collection.to_json
+        },
+        rendered: true
+      )
+    end
+    helper_method :bind_collection
 end

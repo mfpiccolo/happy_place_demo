@@ -14,8 +14,10 @@
       <% @orders.each do |o| %>
         <tr>
           <td><%= link_to o.id, purchase_orders_path(order_id: o.id), remote: true %></td>
-          <td><%= o.state %></td>
-          <td><%= o.customer_name %></td>
+          <!-- Ideally the would build out the below line -->
+          <!-- <td><%#= model_attr(o, :state) %></td> -->
+          <td><div id="order_#{<%= o.id %>}_state"><%= o.state %></div></td>
+          <td><div id="order_<%= o.id %>_customer_name"><%= o.customer_name %></div></td>
           <td><%= o.created_at %></td>
           <td><%= o.updated_at %></td>
         </tr>

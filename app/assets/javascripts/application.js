@@ -14,6 +14,10 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require app
+//= require_tree ./models
 //= require_tree ./controllers
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation();});
+
+
