@@ -12,6 +12,7 @@ class PurchaseOrdersController < ApplicationController
     respond_to do |format|
       format.js {
         js(
+          function: "dashboard",
           partials: {
             purchase_orders_partial: "table",
             requests_partial: "requests/table",

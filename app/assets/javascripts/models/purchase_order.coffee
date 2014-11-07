@@ -1,5 +1,8 @@
-PurchaseOrder = (uid) ->
-  binder = new DataBinder(uid)
+# TODO refactor to coffee class
+App.PurchaseOrder = (uid) ->
+  binder = new App.DataBinder(uid, "purchase-order")
+
+  # Abstract all this out
   purchase_order =
     attributes: {}
 
@@ -17,7 +20,6 @@ PurchaseOrder = (uid) ->
       @attributes[attr_name]
 
     _binder: binder
-
 
   # Subscribe to the PubSub
   binder.on uid + ":change", (evt, attr_name, new_val, initiator) ->

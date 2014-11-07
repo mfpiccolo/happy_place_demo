@@ -19,7 +19,7 @@
   <tbody id="purchase_orders">
     <!-- Sets up a js array of objects and binds the attrs -->
     <%= bind_collection(@purchase_orders) do %>
-      <tr>
+      <tr data-model-purchase-order="">
         <td data-attr="state"></td>
         <td data-attr="important_info"></td>
         <td data-attr="order_id"></td>

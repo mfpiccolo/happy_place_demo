@@ -3,7 +3,6 @@ App.purchase_orders = [];
 Object.observe(App.purchase_orders, function(changes) {
   return changes.forEach(function(change) {
     var purchase_order;
-    console.log(change.type);
     if (change.type === "update") {
       purchase_order = change.object[change.name];
       return $.each(change.object, function(i, purchase_order) {

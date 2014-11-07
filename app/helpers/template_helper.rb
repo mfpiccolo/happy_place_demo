@@ -2,7 +2,7 @@ module TemplateHelper
 
   def bind_collection(collection, &block)
     js(
-      js_class: "Binder",
+      js_class: "PurchaseOrdersController",
       function: "index",
       args: {
         template: capture(&block),
