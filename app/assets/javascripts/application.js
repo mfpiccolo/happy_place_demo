@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
-//= require watch
 //= require app
 //= require_tree ./models
 //= require_tree ./controllers
