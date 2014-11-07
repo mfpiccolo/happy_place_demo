@@ -10,11 +10,12 @@ class this.PurchaseOrdersController
 
   @index: (args) ->
     purchase_orders = $.parseJSON(args.purchase_orders)
+    collection_elem = $("[data-collection=purchase_orders]")
     # Append empty templates
-    $("#purchase_orders").html("")
+    collection_elem.html("")
     $.each purchase_orders, (i, val) ->
       added_id = $(args.template).attr("data-model-purchase-order", val.id)
-      $("#purchase_orders").append(added_id)
+      collection_elem.append(added_id)
 
     # Update the puchase_orders observed object
     $.extend true, App.purchase_orders,
