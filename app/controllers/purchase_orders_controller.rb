@@ -5,6 +5,8 @@ class PurchaseOrdersController < ApplicationController
   # GET /purchase_orders
   # GET /purchase_orders.json
   def index
+    @purchase_order = PurchaseOrder.new
+
     PurchaseOrdersFilter.(params, self)
 
     respond_to do |format|

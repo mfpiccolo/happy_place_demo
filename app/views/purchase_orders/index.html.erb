@@ -1,5 +1,12 @@
 <h1>Listing purchase_orders</h1>
 
+<%= label_tag :id %>
+<%= text_field_tag :id, nil, placeholder: "Id of record to update", data: {id: "" } %>
+<%= label_tag :state %>
+<%= text_field_tag :state, nil, placeholder: "Update the state", data: {input: 'state' } %>
+<%= label_tag :important_info %>
+<%= text_field_tag :important_info, nil, placeholder: "Update the important_info", data: {input: 'important_info' } %>
+
 <table>
   <thead>
     <tr>

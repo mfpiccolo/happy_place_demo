@@ -14,4 +14,3 @@ class this.Binder
     # Update the puchase_orders observed object
     $.extend true, App.purchase_orders,
       $.parseJSON(args.purchase_orders)
-
