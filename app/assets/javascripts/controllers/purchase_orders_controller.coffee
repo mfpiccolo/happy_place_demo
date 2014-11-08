@@ -17,6 +17,9 @@ class this.PurchaseOrdersController
       added_id = $(args.template).attr("data-model-purchase-order", val.id)
       collection_elem.append(added_id)
 
-    # Update the puchase_orders observed object
-    $.extend true, App.purchase_orders,
-      $.parseJSON(args.purchase_orders)
+      # set attrs in templates
+      purchase_order = new App.PurchaseOrder(val.id)
+      tds = $("tr[data-model-purchase-order=" + val.id + "] td")
+      $.each tds, (i, attr) ->
+        attribute = $(attr).data("attr")
+        purchase_order.set(attribute, val[attribute])

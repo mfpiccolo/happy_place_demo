@@ -16,16 +16,13 @@
     </tr>
   </thead>
 
-  <tbody data-collection="purchase_orders">
-    <!-- Sets up a js array of objects and binds the attrs -->
-    <%= bind_collection(@purchase_orders) do %>
-      <tr data-model-purchase-order="">
-        <td data-attr="state"></td>
-        <td data-attr="important_info"></td>
-        <td data-attr="order_id"></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <%= bind(collection: @purchase_orders, container: :tbody) do %>
+    <tr data-model-purchase-order="">
+      <td <%= data_attr_for :purchase_order, :state %> ></td>
+      <td <%= data_attr_for :purchase_order, :important_info %> ></td>
+      <td <%= data_attr_for :purchase_order, :order_id %> ></td>
+    </tr>
+  <% end %>
 </table>
 
 <br>
