@@ -5,8 +5,7 @@ class App.PurchaseOrder
 
     # Subscribe to the PubSub
     @binder.on @id + ":change", (evt, attr_name, new_val, initiator) =>
-      this.set attr_name, new_val  if initiator isnt this
-      return
+      @set attr_name, new_val  if initiator isnt @
 
   # The attribute setter publish changes using the DataBinder PubSub
   set: (attr_name, val) ->
@@ -14,9 +13,8 @@ class App.PurchaseOrder
     @binder.trigger @id + ":change", [
       attr_name
       val
-      this
+      @
     ]
-    return
 
   get: (attr_name) ->
     @attributes[attr_name]
