@@ -15,9 +15,9 @@
 //= require foundation
 //= require turbolinks
 //= require app
+//= require_tree ./utilities
 //= require_tree ./models
 //= require_tree ./controllers
-//= require_tree ./utilities
 
 $(function(){ $(document).foundation();});
 
