@@ -28,6 +28,16 @@ class PurchaseOrdersController < ApplicationController
     end
   end
 
+  def rails_index
+    @purchase_order = PurchaseOrder.new
+
+    PurchaseOrdersFilter.(params, self)
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
   # GET /purchase_orders/1
   # GET /purchase_orders/1.json
   def show
@@ -49,6 +59,7 @@ class PurchaseOrdersController < ApplicationController
 
     respond_to do |format|
       if @purchase_order.save
+        format.js { js }
         format.html { redirect_to @purchase_order, notice: 'Purchase order was successfully created.' }
         format.json { render :show, status: :created, location: @purchase_order }
       else
@@ -63,6 +74,7 @@ class PurchaseOrdersController < ApplicationController
   def update
     respond_to do |format|
       if @purchase_order.update(purchase_order_params)
+        format.js { js }
         format.html { redirect_to @purchase_order, notice: 'Purchase order was successfully updated.' }
         format.json { render :show, status: :ok, location: @purchase_order }
       else

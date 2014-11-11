@@ -1,10 +1,3 @@
-# Keydown binding example
-jQuery(document).on "keydown", "[data-id]", (evt) ->
-  jQuery(document).off("keydown", "[data-input]")
-  id = $("[data-id]").val()
-  #TODO make this part dynamic so it can work with any model
-  new App.PurchaseOrder(id)
-
 App.DataBinder = (object_id, model_name) ->
   # Use a jQuery object as simple PubSub
   pubSub = jQuery({})

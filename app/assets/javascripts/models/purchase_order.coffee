@@ -1,22 +1,19 @@
-class App.PurchaseOrder
-  constructor: (@id) ->
-    @binder = new App.DataBinder(@id, "purchase-order")
-    @attributes = {}
+class App.PurchaseOrder extends App.Base
+  constructor: ->
+    super
 
-    # Subscribe to the PubSub
-    @binder.on @id + ":change", (evt, attr_name, new_val, initiator) =>
-      @set attr_name, new_val  if initiator isnt @
+  save: ->
+    if @id?
+      url = "/purchase_orders/" + @id + ".js"
+    else
+      url = "/purchase_orders.js"
 
-  # The attribute setter publish changes using the DataBinder PubSub
-  set: (attr_name, val) ->
-    @attributes[attr_name] = val
-    @binder.trigger @id + ":change", [
-      attr_name
-      val
-      @
-    ]
+    $.ajax
+      url: url
+      type: "PATCH"
+      data: {
+        "purchase_order": @attributes,
+      }
 
-  get: (attr_name) ->
-    @attributes[attr_name]
-
-
+  update_attributes: (attrs) ->
+    @attributes = attrs

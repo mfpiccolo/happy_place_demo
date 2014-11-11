@@ -9,6 +9,7 @@ class this.PurchaseOrdersController
     $("#description").html(args.description)
 
   @index: (args) ->
+    window.po_template = args.template
     purchase_orders = $.parseJSON(args.purchase_orders)
     collection_elem = $("[data-collection=purchase_orders]")
     # Append empty templates
@@ -23,3 +24,9 @@ class this.PurchaseOrdersController
       $.each tds, (i, attr) ->
         attribute = $(attr).data("attr")
         purchase_order.set(attribute, val[attribute])
+
+  @update: ->
+    alert "You updated the po!"
+
+  @create: ->
+    alert "You have created a po!"

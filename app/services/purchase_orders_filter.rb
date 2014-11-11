@@ -15,6 +15,8 @@ class PurchaseOrdersFilter
         .includes(:line_items).map(&:line_items).flatten.uniq
     end
 
+    @purchase_orders = @purchase_orders.order('id ASC')
+
     set_controller_instance_vars
   end
 

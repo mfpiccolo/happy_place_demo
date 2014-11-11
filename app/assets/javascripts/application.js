@@ -18,6 +18,7 @@
 //= require_tree ./utilities
 //= require_tree ./models
 //= require_tree ./controllers
+//= require_tree ./event_listeners
 
 $(function(){ $(document).foundation();});
 

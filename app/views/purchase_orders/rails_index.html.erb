@@ -10,25 +10,21 @@
 <table>
   <thead>
     <tr>
-      <th>ID</th>
       <th>State</th>
       <th>Important info</th>
       <th>Order</th>
-      <th></th>
     </tr>
   </thead>
 
-  <%= bind(collection: @purchase_orders, container: :tbody) do %>
-    <tr class="po" data-model-purchase-order="">
-      <td <%= data_attr_for :purchase_order, :id %> ></td>
-      <td <%= data_attr_for :purchase_order, :state %> ></td>
-      <td <%= data_attr_for :purchase_order, :important_info %> ></td>
-      <td <%= data_attr_for :purchase_order, :order_id %> ></td>
-      <td><%= link_to "Save", "#", class: "save" %></td>
+  <% @purchase_orders.each do |po| %>
+    <tr class="po" data-model-purchase-order=<%= po.id %>>
+      <td <%= data_attr_for :purchase_order, :state %> ><%= po.state %></td>
+      <td <%= data_attr_for :purchase_order, :important_info %> ><%= po.important_info %></td>
+      <td <%= data_attr_for :purchase_order, :order_id %> ><%= po.order_id %></td>
     </tr>
   <% end %>
 </table>
 
 <br>
 
-<%= link_to 'New Purchase order', "#", id: "new_po" %>
+<%= link_to 'New Purchase order', new_purchase_order_path %>
