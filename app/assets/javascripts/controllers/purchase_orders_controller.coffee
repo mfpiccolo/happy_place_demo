@@ -9,6 +9,7 @@ class this.PurchaseOrdersController
     $("#description").html(args.description)
 
   @index: (args) ->
+    App.PurchaseOrderListeners.set_listeners()
     window.po_template = args.template
     purchase_orders = $.parseJSON(args.purchase_orders)
     collection_elem = $("[data-collection=purchase_orders]")
