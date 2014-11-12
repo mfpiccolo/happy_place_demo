@@ -22,3 +22,16 @@ class App.Base
 
   get: (attr_name) ->
     @attributes[attr_name]
+
+  save: ->
+    if @id?
+      url = "/purchase_orders/" + @id + ".js"
+    else
+      url = "/purchase_orders.js"
+
+    $.ajax
+      url: url
+      type: "PATCH"
+      data: {
+        "purchase_order": @attributes,
+      }
