@@ -24,10 +24,11 @@ class App.Base
     @attributes[attr_name]
 
   save: ->
+    @route ||= @model.replace("-", "_") + "s"
     if @id?
-      url = "/purchase_orders/" + @id + ".js"
+      url = "/" + @route + "/" + @id + ".js"
     else
-      url = "/purchase_orders.js"
+      url = "/" + @route + ".js"
 
     $.ajax
       url: url
@@ -35,3 +36,7 @@ class App.Base
       data: {
         "purchase_order": @attributes,
       }
+
+  set_attributes: (attrs) ->
+    $.each attrs, (attr, val) =>
+      @set(attr, val)

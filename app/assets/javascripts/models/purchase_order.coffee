@@ -2,6 +2,5 @@ class App.PurchaseOrder extends App.Base
   constructor: ->
     super
 
+  # TODO add validations
 
-  update_attributes: (attrs) ->
-    @attributes = attrs
