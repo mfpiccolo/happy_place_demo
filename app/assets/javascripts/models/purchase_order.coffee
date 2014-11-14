@@ -1,6 +1,3 @@
 class App.PurchaseOrder extends App.Base
-  constructor: ->
-    super
-
-  # TODO add validations
-
+  consturctor: ->
+    @route = "whatever/purchase_orders"

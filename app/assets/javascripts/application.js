@@ -14,12 +14,14 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
-//= require app
-//= require_tree ./utilities
+//= require kindred
 //= require_tree ./models
 //= require_tree ./controllers
 //= require_tree ./event_listeners
 
-$(function(){ $(document).foundation();});
+$(function(){
+  $(document).foundation();
+});
+
 
 
